@@ -1,0 +1,7 @@
+llama_generate_endpoint = "http://127.0.0.1:3000/api/generate"
+llama_chat_endpoint = "http://127.0.0.1:3000/api/chat"
+whisper_endpoint = "http://127.0.0.1:3001/whisper"
+tts_endpoint = "http://127.0.0.1:3002/tts"
+
+camp_system_prompt = {role= "system", content= "You are a listener to a conversation. You analise the conversation and respond with Yes or No to the questions about the conversation."}
+camp_conversation_parts = ["start", "continuation"]

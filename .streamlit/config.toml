@@ -1,0 +1,11 @@
+[runner]
+fastReruns = true
+
+[server]
+port = 8501
+sslCertFile = 'cert/rootCA.pem'
+sslKeyFile = 'cert/rootCA.key'
+
+[theme]
+base="light"
+primaryColor="#3bad3b"
