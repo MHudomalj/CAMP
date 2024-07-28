@@ -3,8 +3,8 @@ fastReruns = true
 
 [server]
 port = 8501
-sslCertFile = 'cert/rootCA.pem'
-sslKeyFile = 'cert/rootCA.key'
+# sslCertFile = 'cert/rootCA.pem'
+# sslKeyFile = 'cert/rootCA.key'
 
 [theme]
 base="light"
