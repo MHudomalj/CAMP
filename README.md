@@ -30,8 +30,12 @@ For Country Name input your location 2 letter code (example US). For Organisatio
 
 In the .streamlit/config.toml file remove '#' before sslCertFile and sslKeyFile.
 
+!!!Even though ssl is enabled do not expose this application to the internet!!! The application is only designed to work on your private network.
+
+Browser will warn you that the ceritficate is not trusted. You can accept the certificate as you generated it yourself.
+
 ## Running CAMP
-To run the application do the following command inside this repository folder using CMD. The virtual environment must be activated first.
+To run the application, do the following command inside this repository folder using CMD. The virtual environment must be activated first.
 ```
 .venv\Scrpits\activate
 streamlit run CAMP_app.py
@@ -40,3 +44,6 @@ This will also open the CAMP application in your browser.
 
 ## Configuration
 Some configuration of the Streamlit CAMP application can be done in CAMP_config.toml. You can change the endpoints of the STT, LLM and TTS servers if you deployed them on a separate device. This is very useful for development.
+
+## Dataset
+For the development we used a dataset of transcripts from the popular TV show Friends [character-mining](https://github.com/emorynlp/character-mining). You can add a folder "dataset" in this repository and download the [firends_season_01.json](https://github.com/emorynlp/character-mining/blob/master/json/friends_season_01.json) into it, which will enable using the dataset for testing of CAMP in the application by inputting prompts from the dataset as the transcripts to the CAMP application.
