@@ -42,7 +42,7 @@ Browser will warn you that the ceritficate is not trusted. You can accept the ce
 ## Running CAMP
 To run the application, do the following command inside this repository folder using CMD. The virtual environment must be activated first.
 ```
-.venv\Scrpits\activate
+.venv\Scripts\activate.bat
 streamlit run CAMP_app.py
 ```
 This will also open the CAMP application in your browser.
