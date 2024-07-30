@@ -8,6 +8,8 @@ A more detail description and demo can be found on [Hackster.io](https://www.hac
 The application is built as a WEB app with [Streamlit](https://streamlit.io/). It uses a custom component for streaming microphone recordings that was build based on the [B4PT0R/streamlit-mic-recorder](https://github.com/B4PT0R/streamlit-mic-recorder). The component was extended to periodically send complete audio files to the Streamlit application and pause recording when there is audio playback.
 
 ## Prerequisites:
+You will require Python v3.11 or greater.
+
 Launch STT, LLM and TTS servers. In the following repositories you can find the required servers, but you can also use other that have same API. These servers were developed to accompany the main CAMP application. Everything is meant to be deployed on a single AMD Ryzen AI PC running on localhost:
  - LLM Llama2 server using AMD Ryzen AI NPU: [CAMP-llama2](https://github.com/MHudomalj/CAMP-llama2)
  - STT Whisper server: [CAMP-SpeechToText](https://github.com/Da1aticus/CAMP-SpeechToText)
@@ -18,13 +20,16 @@ But deployment  on other HW is possible.
 Download this repository. Create a python virtual environment based on requirements.txt using CMD in the repository folder.
 ```
 python -m venv .venv
-.venv\Scrpits\activate
+.venv\Scripts\activate.bat
 pip install -r requirements.txt
 ```
-For microphone recording to work in your browser not only on the localhost, https is needed. You must create certificates. The simplest way to achieve this on Windows is by using Windows Subsystem for Linux (WSL). To enable this feature in Windows just type WSL in search bar and follow the installation process. Then create folder CAMP/cert and then run the following command from CMD inside the cert folder. This will start WSL and then you execute the openssl command:
+
+## Optional step for remote access
+For microphone recording to work in your browser not only on the localhost, https is needed. You must create certificates. The simplest way to achieve this on Windows is by using Windows Subsystem for Linux (WSL). To enable this feature in Windows just type WSL in search bar and follow the installation process. Switch to folder CAMP/cert and then run the following command from CMD inside the cert folder. This will start WSL and then you execute the openssl command:
 ```
 bash
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout rootCA.key -out rootCA.crt
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout rootCA.key -out rootCA.pem
+exit
 ```
 For Country Name input your location 2 letter code (example US). For Organisation Name input CAMP and Common Name CAMP. For everything else you can just press enter.
 
@@ -46,4 +51,4 @@ This will also open the CAMP application in your browser.
 Some configuration of the Streamlit CAMP application can be done in CAMP_config.toml. You can change the endpoints of the STT, LLM and TTS servers if you deployed them on a separate device. This is very useful for development.
 
 ## Dataset
-For the development we used a dataset of transcripts from the popular TV show Friends [character-mining](https://github.com/emorynlp/character-mining). You can add a folder "dataset" in this repository and download the [firends_season_01.json](https://github.com/emorynlp/character-mining/blob/master/json/friends_season_01.json) into it, which will enable using the dataset for testing of CAMP in the application by inputting prompts from the dataset as the transcripts to the CAMP application.
+For the development we used a dataset of transcripts from the popular TV show Friends [character-mining](https://github.com/emorynlp/character-mining). You can and download the [firends_season_01.json](https://github.com/emorynlp/character-mining/blob/master/json/friends_season_01.json) into dataset folder, which will enable using the dataset for testing of CAMP in the application by inputting prompts from the dataset as the transcripts to the CAMP application.
