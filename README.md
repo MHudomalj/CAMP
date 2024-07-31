@@ -14,7 +14,6 @@ Launch STT, LLM and TTS servers. In the following repositories you can find the 
  - LLM Llama2 server using AMD Ryzen AI NPU: [CAMP-llama2](https://github.com/MHudomalj/CAMP-llama2)
  - STT Whisper server: [CAMP-SpeechToText](https://github.com/Da1aticus/CAMP-SpeechToText)
  - TTS pyttsx3 server: [CAMP-TextToSpeech](https://github.com/Da1aticus/CAMP-TextToSpeech)
-But deployment  on other HW is possible.
 
 ## Installation
 Download this repository. Create a python virtual environment based on requirements.txt using CMD in the repository folder.
